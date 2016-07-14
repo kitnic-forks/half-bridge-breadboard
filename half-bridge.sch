@@ -29,16 +29,17 @@ LIBS:opto
 LIBS:atmel
 LIBS:contrib
 LIBS:valves
+LIBS:half-bridge-cache
 EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
-Title ""
-Date ""
-Rev ""
-Comp ""
-Comment1 ""
+Title "half-bridge circuit, breadboard"
+Date "2016-07-14"
+Rev "1.0"
+Comp "for(embed)"
+Comment1 "www.forembed.com"
 Comment2 ""
 Comment3 ""
 Comment4 ""
@@ -453,7 +454,7 @@ $EndComp
 Text Notes 8850 1250 0    60   ~ 0
 breadboard\npower\nconnection
 Text Notes 5000 1150 0    60   ~ 0
-if 10V < BATT < 20V, then short this connection
+if 10V < BATT < 20V, then you may short this connection
 $Comp
 L +12V #PWR011
 U 1 1 5787FC0F
@@ -494,4 +495,8 @@ Wire Wire Line
 	2300 1600 2300 1700
 Wire Wire Line
 	2300 2000 2300 2100
+Text Notes 750  3300 0    60   ~ 0
+TTL-compatible inputs -\nyou may use 3.3V and 5V logic
+Text Notes 750  2900 0    60   ~ 0
+The +12V node is intended to supply power\nto an external circuit OR to receive power\nfrom the external circuit, depending on the\njumper status of P2
 $EndSCHEMATC

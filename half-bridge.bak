@@ -29,16 +29,17 @@ LIBS:opto
 LIBS:atmel
 LIBS:contrib
 LIBS:valves
+LIBS:half-bridge-cache
 EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
-Title ""
-Date ""
-Rev ""
-Comp ""
-Comment1 ""
+Title "half-bridge circuit, breadboard"
+Date "2016-07-14"
+Rev "1.0"
+Comp "for(embed)"
+Comment1 "www.forembed.com"
 Comment2 ""
 Comment3 ""
 Comment4 ""
@@ -453,5 +454,47 @@ $EndComp
 Text Notes 8850 1250 0    60   ~ 0
 breadboard\npower\nconnection
 Text Notes 5000 1150 0    60   ~ 0
-if 10V < BATT < 20V, then short this connection
+if 10V < BATT < 20V, then you may short this connection
+$Comp
+L +12V #PWR011
+U 1 1 5787FC0F
+P 2300 1600
+F 0 "#PWR011" H 2300 1450 50  0001 C CNN
+F 1 "+12V" H 2300 1740 50  0000 C CNN
+F 2 "" H 2300 1600 50  0000 C CNN
+F 3 "" H 2300 1600 50  0000 C CNN
+	1    2300 1600
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C4
+U 1 1 5787FC4A
+P 2300 1850
+F 0 "C4" H 2325 1950 50  0000 L CNN
+F 1 "1uF 50V" H 2325 1750 50  0000 L CNN
+F 2 "lib_pcb:SM_0805" H 2338 1700 50  0001 C CNN
+F 3 "" H 2300 1850 50  0000 C CNN
+F 4 "CL21F105ZBFNNNG" H 2300 1850 60  0001 C CNN "MPN"
+F 5 "Samsung Electro-Mechanics America, Inc" H 2300 1850 60  0001 C CNN "Manufacturer"
+F 6 "capacitor, ceramic, Y5V, 1uF 50V, 0805" H 2300 1850 60  0001 C CNN "Description"
+	1    2300 1850
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR012
+U 1 1 5787FCF5
+P 2300 2100
+F 0 "#PWR012" H 2300 1850 50  0001 C CNN
+F 1 "GND" H 2300 1950 50  0000 C CNN
+F 2 "" H 2300 2100 50  0000 C CNN
+F 3 "" H 2300 2100 50  0000 C CNN
+	1    2300 2100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2300 1600 2300 1700
+Wire Wire Line
+	2300 2000 2300 2100
+Text Notes 900  3300 0    60   ~ 0
+TTL-compatible inputs -\nyou may use 3.3V and 5V logic
 $EndSCHEMATC
